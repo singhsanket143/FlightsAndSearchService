@@ -28,7 +28,7 @@ class CityRepository {
         }
     }
 
-    async updateCity(cityId, data) {
+    async updateCity(cityId, data) { // {name: "Prayagraj"}
         try {
             const city = await City.update(data, {
                 where: {
@@ -45,7 +45,7 @@ class CityRepository {
     async getCity(cityId) {
         try {
             const city = await City.findByPk(cityId);
-            return City;
+            return city;
         } catch (error) {
             console.log("Something went wrong in the repository layer");
             throw {error};
